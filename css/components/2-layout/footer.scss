@@ -1,0 +1,412 @@
+.footer {
+  background-color: $main;
+  color: $white;
+  overflow: hidden;
+  position: sticky;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  &__inner { 
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 0 185px;
+    &-title {
+      margin-bottom: 32px;
+    }
+    &-content {
+      width: calc(50% - 10px);
+      max-width: 554px;
+    }
+    &-form {
+      width: calc(50% - 10px);
+      max-width: 554px;
+      padding-top: 15px;
+      display: none;
+      flex-direction: column;
+      align-items: flex-end;
+      &.active {
+        display: flex;
+      }
+    }
+    &-row {
+      display: flex;
+      justify-content: space-between;
+    }
+    &-col {
+      width: calc(50% - 10px);
+      max-width: 260px;
+      .paragraph {
+        opacity: 0.8;
+      }
+      & > a {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+        color: $white;
+        opacity: 0.8;
+        transition: .3s ease;
+        position: relative;
+        &::before {
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: .5px;
+            background-color: $white;
+            opacity: 0;
+            content: "";
+            transition: .3s ease;
+        }
+        &:hover {
+          opacity: .8;
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    &-validation {
+      width: calc(50% - 10px);
+      max-width: 450px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 110px;
+      &.active {
+        display: flex;
+      }
+      span {
+        width: 107px;
+        height: 107px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 42px;
+        img {
+          width: 100%;
+        }
+      }
+      .paragraph {
+        min-height: 150px;
+      }
+    }
+    .headline-2 {
+      margin-bottom: 6px;
+    }
+    .headline-6 {
+      margin-bottom: 5px;
+    }
+    .input {
+        margin-bottom: 30px;
+    }
+    .button {
+        width: 100%;
+        max-width: 260px;
+    }
+  }
+  &Social {
+    display: flex;
+    align-items: center;
+    a {
+      width: 18px;
+      height: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 15px;
+      &:hover {
+        opacity: 1;
+        svg {
+          color: $primary;
+        }
+      }
+      &:last-child {
+        margin: 0;
+      }
+      svg {
+        width: 100%;
+        height: 100%;
+        color: $white;
+        transition: 0.3s ease;
+      }
+    }
+  }
+  &Info {
+    display: none;
+  }
+  &Imprint {
+    border-top: 1px solid #ffffff53;
+    padding: 50px 0 40px;
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__logo {
+      font-size: 36px;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 42px;
+      font-family: $raleway;
+      opacity: 1;
+    }
+    &__link {
+      a {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 165%;
+        opacity: 0.9;
+        &:hover {
+            opacity: 1;
+            color: $primary;
+        }
+      }
+    }
+  }
+  &Copy {
+    border-top: 1px solid #ffffff53;
+    padding: 15px 0 20px;
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .paragraph {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 165%;
+        opacity: 0.5;
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+}
+// 930px height
+@mixin footer-md-lg-h {
+  .footer {
+    transform: translateY(30%);
+  }
+}
+// 930px 
+@mixin footer-md-lg {
+  .footer {
+    &__inner {
+      padding: 80px 0 160px;
+      &-form {
+        padding-top: 6px;
+      }
+      &-col {
+        & > a {
+          display: block;
+          font-size: 15px;
+          line-height: 26px;
+        }
+      }
+      &-validation {
+        span {
+          width: 85px;
+          height: 85px;
+          margin-bottom: 28px;
+        }
+        .paragraph {
+          min-height: 100px;
+        }
+      }
+      .paragraph {
+        font-size: 15px;
+        line-height: 26px;
+      }
+      .input {
+        margin-bottom: 24px;
+      }
+      .button {
+        max-width: 220px;
+      }
+    }
+    &Imprint {
+      padding: 30px 0;
+      &__logo {
+        font-size: 34px;
+        line-height: 40px;
+      }
+    }
+  }
+}
+// 750px
+@mixin footer-sm-md {
+  .footer {
+  }
+}
+// 750px height
+@mixin footer-sm-md-extra-h {
+  .footer {
+    transform: translateY(50%);
+  }
+}
+// 600px height
+@mixin footer-xsm-sm-h {
+  .footer {
+    // transform: translateY(60%) !important;
+
+  }
+}
+// 650px 
+@mixin footer-sm-md-extra {
+  .footer {
+    // transform: translateY(35%);
+    transform: translate(0) !important;
+    position: static;
+    &__inner {
+      padding: 60px 0;
+      flex-direction: column;
+      &-title {
+        text-align: center;
+        margin-bottom: 75px;
+      }
+      &-content {
+        width: 100%;
+        max-width: unset;
+      }
+      &-form {
+        width: 100%;
+        max-width: unset;
+        margin: 0;
+        padding: 0 0 80px 0;
+      }
+      &-row {
+        display: none;
+      }
+      &-validation {
+        width: 100%;
+        max-width: unset;
+        padding: 0 0 60px;
+        min-height: 425px;
+        justify-content: center;
+        .paragraph {
+          min-height: unset;
+        }
+      }
+      .button {
+        width: 100%;
+        max-width: unset;
+      }
+      .input {
+        margin-bottom: 30px;
+        &:last-of-type {
+          margin-bottom: 36px;
+        }
+      }
+    }
+    &Info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      &__item {
+        margin-bottom: 30px;
+        &:last-child {
+          margin: 0;
+        }
+      }
+      .headline-6 {
+        font-size: 13px;
+        background: transparent;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        background-clip: unset;
+        text-fill-color: transparent;
+        color: $white;
+        margin-bottom: 10px;
+        &.sm {
+          margin-bottom: 4px;
+        }
+      }
+      a {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+        color: $white;
+        opacity: 0.8;
+        transition: .3s ease;
+        position: relative;
+        &::before {
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: .5px;
+            background-color: $white;
+            opacity: 0;
+            content: "";
+            transition: .3s ease;
+        }
+        &:hover {
+          opacity: .8;
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+      .paragraph {
+        opacity: .8;
+        font-size: 18px;
+      }
+
+    }
+    &Social {
+      justify-content: center;
+      a {
+        opacity: 1;
+      }
+    }
+    &Imprint {
+      padding: 50px 0 40px;
+      &__inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      &__logo {
+        display: block;
+        font-weight: 600;
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      &__link {
+        a {
+          font-size: 15px;
+        }
+      }
+    }
+    &Copy {
+      padding: 30px 0 26px;
+      &__inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        .footerSocial {
+          display: none;
+        }
+        .paragraph {
+          br {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+// 540px
+@mixin footer-xsm-sm {
+  .footer {
+  }
+}
+// 390px
+@mixin footer-xxxsm-xxsm {
+  .footer {
+  }
+}

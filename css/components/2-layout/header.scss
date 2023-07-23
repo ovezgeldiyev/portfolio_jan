@@ -1,0 +1,79 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transition: 0.4s ease;
+  .auto__container {
+    max-width: 1220px;
+  }
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation-name: sticky;
+    animation-duration: 0.4s;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    background-color: $white;
+  }
+  &__inner {
+    padding: 26px 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-logo {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28px;
+      color: $main;
+      font-family: $raleway;
+      height: 24px;
+    }
+  }
+}
+// 1180px
+@mixin header-xlg-xxlg {
+  .header {
+    &__inner {
+      padding: 20px 0;
+      &-logo {
+        font-size: 22px;
+        line-height: 26px;
+      }
+    }
+  }
+}
+// 1024px
+@mixin header-lg-xlg {
+  .header {
+    &.active {
+      box-shadow: 0px 4px 4px 0px #00000021;
+      background-color: $white;
+    }
+  }
+}
+
+// 540px
+@mixin header-xsm-sm {
+  .header {
+    &__inner {
+      padding: 18px 0;
+      &-logo {
+        font-size: 20px;
+        line-height: 23px;
+      }
+    }
+  }
+}
+@keyframes sticky {
+  0% {
+    top: -60px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}

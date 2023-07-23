@@ -1,0 +1,204 @@
+.nav {
+  &__inner {
+    display: flex;
+    align-items: center;
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      &:last-child {
+        margin: 0;
+      }
+      a, button {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: uppercase;
+        background: $main;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        font-family: $raleway;
+        padding: 5px;
+        position: relative;
+        cursor: pointer;
+        span {
+        }
+        &:hover {
+          background: linear-gradient(180deg, #b468ff 9.38%, #6366f1 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+        }
+        &.active {
+          background: linear-gradient(180deg, #b468ff 9.38%, #6366f1 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+        }
+      }
+    }
+  }
+}
+.burger {
+  display: none;
+}
+// 1180px
+@mixin nav-xlg-xxlg {
+  .nav {
+    &__inner {
+      li {
+        margin-right: 15px;
+        a, button {
+          font-size: 12px;
+          line-height: 14px;
+        }
+      }
+    }
+  }
+}
+// 1024px
+@mixin nav-lg-xlg {
+  body.active {
+    overflow: hidden;
+  }
+  .nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 70px);
+    z-index: 9;
+    background: rgba($color: #000000, $alpha: 0.8);
+    transform: translateX(100%);
+    @include transition;
+    &.active {
+      @include transformReset;
+    }
+    &__inner {
+      flex-direction: column;
+      position: absolute;
+      justify-content: unset;
+      align-items: center;
+      box-sizing: border-box;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 292px;
+      z-index: 1;
+      padding: 35px 20px 20px 30px;
+      height: 100%;
+      overflow-y: auto;
+      background: $white;
+      li {
+        width: 100%;
+        margin: 0 0 20px 0;
+        a, button {
+          width: 100%;
+          text-align: start;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 21px;
+        }
+      }
+    }
+  }
+  .burger {
+    display: block;
+    cursor: pointer;
+    @include transition;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    &:hover {
+      &::before {
+        background-color: $main;
+      }
+      span {
+        background-color: $main;
+      }
+      &::after {
+        background-color: $main;
+      }
+    }
+    &::before {
+      top: 15%;
+      width: 100%;
+      height: 3px;
+      background-color: #3f3f46;
+      transition: all 0.3s ease;
+      content: "";
+      position: absolute;
+      left: 50%;
+      @include transformX;
+      border-radius: 3px;
+    }
+    span {
+      top: 50%;
+      width: 100%;
+      height: 3px;
+      background-color: #3f3f46;
+      transition: all 0.3s ease;
+      position: absolute;
+      left: 50%;
+      @include transform;
+      @include transition;
+      border-radius: 3px;
+    }
+    &::after {
+      bottom: 15%;
+      width: 100%;
+      height: 3px;
+      background-color: #3f3f46;
+      transition: all 0.3s ease;
+      content: "";
+      position: absolute;
+      left: 50%;
+      @include transformX;
+      border-radius: 3px;
+    }
+    &.active {
+      &::before {
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%) rotate(45deg);
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      span {
+        opacity: 0;
+      }
+      &::after {
+        bottom: 50%;
+        -webkit-transform: translate(-50%, 50%) rotate(-45deg);
+        transform: translate(-50%, 50%) rotate(-45deg);
+      }
+    }
+  }
+}
+// 540px
+@mixin nav-xsm-sm {
+  .nav {
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+  }
+  .burger {
+    width: 18px;
+    height: 14px;
+    &::before {
+      top: 0;
+      height: 2px;
+    }
+    span {
+      height: 2px;
+    }
+    &::after {
+      bottom: 0;
+      height: 2px;
+    }
+  }
+}

@@ -1,0 +1,209 @@
+// 1450px
+@include xxxxlg-xxxxxlg {
+    // @include hero-xxxxlg-xxxxxlg;
+}
+// 1380px
+@include xxxlg-xxxxlg {
+    @include hero-xxxlg-xxxxlg;
+}
+// 1250px
+@include xlg-xxlg-extra {
+    @include hero-xlg-xxlg-extra;
+}
+// 1180px
+@include xlg-xxlg {
+    .auto__container {
+        padding: 0 30px;
+    }
+    .headline-2 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+    @include header-xlg-xxlg;
+    @include nav-xlg-xxlg;
+    @include hero-xlg-xxlg;
+    @include about-xlg-xxlg;
+    @include awards-xlg-xxlg;
+}
+// 1024px
+@include lg-xlg {
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    .headline-4 {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    @include header-lg-xlg;
+    @include nav-lg-xlg;
+    @include hero-lg-xlg;
+    @include career-lg-xlg;
+    @include know-lg-xlg;
+    @include awards-lg-xlg;
+
+}
+// 930px
+@include md-lg {
+    .headline-2 {
+        font-size: 28px;
+        line-height: 34px;
+        &.big {
+            padding-bottom: 8px;
+            &::before {
+                height: 2.5px;
+                width: 80px;
+            }
+        }
+    }
+    .headline-3 {
+        &.ex {
+            font-size: 20px;
+        }
+    }
+    .mouse {
+        width: 32px;
+        height: 52px;
+        border-width: 2.5px;
+        &::before {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .input {
+        input, textarea {
+            font-size: 15px;
+        }
+        textarea {
+            max-height: 125px;
+        }
+        span {
+            font-size: 13px;
+        }
+    }
+    .button {
+        &.uniq {
+            font-size: 13px;
+            line-height: 16px;
+            span {
+                padding: 20px;   
+
+            }
+        }
+    }
+    @include hero-md-lg;
+    @include about-md-lg;
+    @include know-md-lg;
+    @include join-md-lg;
+    @include project-md-lg;
+    @include info-md-lg;
+    @include footer-md-lg;
+
+}
+// 930px height
+@include md-lg-h {
+    @include footer-md-lg-h;
+}
+// 840px
+@include md-lg-extra{
+    .headline-4 {
+        font-size: 18px;
+        line-height: 25px;
+    }
+    @include career-md-lg-extra;
+    @include awards-md-lg-extra;
+
+}
+// 750px
+@include sm-md {
+    .auto__container {
+        padding: 0 20px;
+    }
+
+    @include hero-sm-md;
+    @include about-sm-md;
+    @include know-sm-md;
+
+}
+// 650px
+@include sm-md-extra {
+    @include hero-sm-md-extra;
+    @include awards-sm-md-extra;
+    @include project-sm-md-extra;
+    @include info-sm-md-extra;
+    @include footer-sm-md-extra;
+
+}
+// 750px height
+@include sm-md-extra-h {
+    @include footer-sm-md-extra-h;
+}
+// 600px height
+@include xsm-sm-h {
+    @include footer-xsm-sm-h;
+}
+// 540px
+@include xsm-sm  {
+    .headline-1 {
+        font-size: 15px;
+        em {
+            display: none;
+        }
+    }
+    .headline-2 {
+        font-size: 24px;
+        line-height: 30px;
+        &.big {
+            padding-bottom: 6px;
+            &::before {
+                height: 2px;
+                width: 44px;
+            }
+        }
+    }
+    .headline-3 {
+        &.ex {
+            font-size: 18px;
+        }
+    }
+    .headline-4 {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .button {
+        padding: 20px;
+        font-size: 13px;
+        line-height: 15px;
+    }
+    .anchor {
+        &.sm {
+            top: -70px;
+        }
+    }
+    
+    @include header-xsm-sm;
+    @include nav-xsm-sm;
+    @include hero-xsm-sm;
+    @include about-xsm-sm;
+    @include career-xsm-sm;
+    @include know-xsm-sm;
+    @include awards-xsm-sm;
+    @include join-xsm-sm;
+    @include project-xsm-sm;
+    @include info-xsm-sm;
+
+}
+// 440px
+@include xxsm-xsm  {
+    @include hero-xxsm-xsm;
+    @include join-xxsm-xsm;
+
+}
+// 350px
+@include xxxsm-xxsm  {
+    .auto__container {
+        padding: 0 15px;
+    }
+    @include hero-xxxsm-xxsm;
+    @include awards-xxxsm-xxsm;
+}
+
